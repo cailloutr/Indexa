@@ -8,7 +8,7 @@
         </app-separador>
         
 
-        @for (contato of listaFiltrada; track contato.id) {
+        @for (contato of getListaDeContatoFiltrada(letra); track contato.id) {
             <app-contato [nome]="contato.nome" [telefone]="contato.telefone"></app-contato>
         }
     }

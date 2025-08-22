@@ -29,22 +29,23 @@ export class App {
 
   listaDeContato: ContatoInfo[] = []
 
-  listaFiltrada: ContatoInfo[] = []
+  listaFiltrada = computed(() => this.getListaDeContatoFiltradaPorTermo()
+  
+);
 
   getListaDeContatoFiltrada(letra: string): ContatoInfo[] {
-    return this.listaDeContato.filter(contato => contato.nome[0].toUpperCase() === letra.toUpperCase());
+    return this.listaFiltrada().filter(contato => contato.nome[0].toUpperCase() === letra.toUpperCase())
   }
 
   getListaDeContatoFiltradaPorTermo(): ContatoInfo[] {
     const termo = this.termoBusca().toLowerCase()
     if (!termo) return this.listaDeContato;
-    return this.listaFiltrada = this.listaDeContato.filter(contato =>
+    return this.listaDeContato.filter(contato =>
       contato.nome.toLowerCase().includes(termo.toLowerCase()));
   }
 
   constructor() {
     this.alfabeto = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
     this.listaDeContato = this.contatoService.getAllContatos();
-    this.listaFiltrada = this.listaDeContato
   }
 }
