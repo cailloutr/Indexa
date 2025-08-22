@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
-import { ContatoInterface } from './model/contatoInterface';
-
 import agenda from '../../public/agenda.json'
+import { ContatoInfo } from './model/ContatoInfo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContatoService { 
-  private listaDeContatos: ContatoInterface[] = []
+  private listaDeContatos: ContatoInfo[] = []
 
   constructor(){
     this.listaDeContatos = this.getAllContatos()
   }
 
-  getAllContatos(): ContatoInterface[] {
+  getAllContatos(): ContatoInfo[] {
     return this.listaDeContatos = agenda.map(contato => ({
       id: contato.id,
       nome: contato.nome,
@@ -25,7 +24,7 @@ export class ContatoService {
     }) )
   }
 
-  getFilteredContatos(term: string): ContatoInterface[] {
+  getFilteredContatos(term: string): ContatoInfo[] {
     return this.listaDeContatos.filter(contato => contato.nome.toLowerCase().includes(term.toLowerCase()) );
   }
 
@@ -36,7 +35,7 @@ export class ContatoService {
     return Math.max(...this.listaDeContatos.map(contato => contato.id));
   }
 
-  addContato(contato: ContatoInterface): void {
+  addContato(contato: ContatoInfo): void {
     contato.id = this.getLastId() + 1;
     this.listaDeContatos.push(contato);
   }
