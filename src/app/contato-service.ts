@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Contato } from './contato';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { ContatoInterface } from './contatoInterface';
 
 import agenda from '../../public/agenda.json'
 
@@ -9,13 +7,13 @@ import agenda from '../../public/agenda.json'
   providedIn: 'root'
 })
 export class ContatoService { 
-  private listaDeContatos: Contato[] = []
+  private listaDeContatos: ContatoInterface[] = []
 
   constructor(){
     this.listaDeContatos = this.getAllContatos()
   }
 
-  getAllContatos(): Contato[] {
+  getAllContatos(): ContatoInterface[] {
     return this.listaDeContatos = agenda
   }
 }
