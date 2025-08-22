@@ -30,18 +30,22 @@ export class App {
   listaDeContato: ContatoInfo[] = []
 
   listaFiltrada = computed(() => this.getListaDeContatoFiltradaPorTermo()
-  
-);
+
+  );
 
   getListaDeContatoFiltrada(letra: string): ContatoInfo[] {
     return this.listaFiltrada().filter(contato => contato.nome[0].toUpperCase() === letra.toUpperCase())
   }
 
   getListaDeContatoFiltradaPorTermo(): ContatoInfo[] {
-    const termo = this.termoBusca().toLowerCase()
+    const termo = this.termoBusca().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
     if (!termo) return this.listaDeContato;
     return this.listaDeContato.filter(contato =>
-      contato.nome.toLowerCase().includes(termo.toLowerCase()));
+      contato.nome
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .includes(termo));
   }
 
   constructor() {
