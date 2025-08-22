@@ -1,0 +1,8 @@
+<section>
+    <input 
+    type="search"
+    placeholder="Buscar contato..." 
+    class="busca-input" 
+    [value]="buscaTermo()"
+    (input)="onchangeText($event.target.value)" />
+</section>

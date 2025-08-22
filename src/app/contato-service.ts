@@ -16,4 +16,8 @@ export class ContatoService {
   getAllContatos(): ContatoInterface[] {
     return this.listaDeContatos = agenda
   }
+
+  getFilteredContatos(term: string): ContatoInterface[] {
+    return this.listaDeContatos.filter(contato => contato.nome.toLowerCase().includes(term.toLowerCase()) );
+  }
 }

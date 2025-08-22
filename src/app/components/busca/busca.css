@@ -1,0 +1,24 @@
+.busca-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border: 1px solid #1976d2; /* App primary color */
+    border-radius: 6px;
+    background-color: #f5f7fa; /* App background color */
+    color: #222;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-sizing: border-box;
+    margin-top: 16px;
+}
+
+.busca-input:focus {
+    border-color: #1565c0; /* Darker primary */
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.15);
+}
+
+.busca-input::placeholder {
+    color: #888;
+    opacity: 1;
+}
