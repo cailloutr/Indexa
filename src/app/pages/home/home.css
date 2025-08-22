@@ -1,0 +1,36 @@
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.botoes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 196px;
+    height: 41px;
+    background-color: #FFFFFF;
+    color: #0D6EFD;
+    padding: 6px 12px; 
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #0D6EFD;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none; 
+}
+
+.botoes a {
+    text-decoration: none;
+}
+
+.botoes button img {
+    height: 24px;
+    width: 24px;
+}
