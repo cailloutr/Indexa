@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ContatoInterface } from './contatoInterface';
+import { ContatoInterface } from './model/contatoInterface';
 
 import agenda from '../../public/agenda.json'
 

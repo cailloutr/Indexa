@@ -5,7 +5,7 @@ import { Separador } from '../../components/separador/separador';
 import { Contato } from '../../components/contato/contato';
 import { Busca } from '../../components/busca/busca';
 import { ContatoService } from '../../contato-service';
-import { ContatoInfo } from '../../ContatoInfo';
+import { ContatoInfo } from '../../model/ContatoInfo';
 import { RouterModule } from '@angular/router';
 
 @Component({
