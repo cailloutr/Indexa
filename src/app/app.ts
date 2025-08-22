@@ -7,6 +7,7 @@ import { ContatoService } from './contato-service';
 import { ContatoInfo } from './ContatoInfo';
 import { Contato } from './components/contato/contato';
 import { Busca } from './components/busca/busca';
+import { ContatoFormulario } from "./pages/contato-formulario/contato-formulario";
 
 @Component({
   selector: 'app-root',
@@ -16,8 +17,9 @@ import { Busca } from './components/busca/busca';
     Cabecalho,
     Separador,
     Contato,
-    Busca
-  ],
+    Busca,
+    ContatoFormulario
+],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
