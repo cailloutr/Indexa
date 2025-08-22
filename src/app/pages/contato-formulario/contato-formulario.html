@@ -16,32 +16,29 @@
         <h1>Adicionar Contato</h1>
     </header>
 
-    <main>
-
-    </main>
-    <form>
+    <form [formGroup]="contatoForm" (ngSubmit)="salvaContato()">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" formControlName="nome" required>
 
         <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" required>
+        <input type="tel" id="telefone" name="telefone" formControlName="telefone" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" formControlName="email" required>
 
         <app-separador></app-separador>
 
         <label for="aniversario">Aniversário:</label>
-        <input type="date" id="aniversario" name="aniversario" required>
+        <input type="date" id="aniversario" name="aniversario" formControlName="aniversario" required>
 
         <label for="redes">Rede Social:</label>
-        <input type="text" id="redes" name="redes" required>
+        <input type="text" id="redes" name="redes" formControlName="redes" required>
 
         <label for="observacoes">Observações:</label>
-        <textarea id="observacoes" name="observacoes" required></textarea>
+        <textarea id="observacoes" name="observacoes" formControlName="observacoes" required></textarea>
 
         <section class="botoes">
-            <button class="botao-cancelar" type="submit">Cancelar</button>
+            <button class="botao-cancelar" type="button" (click)="limparFormulario()">Cancelar</button>
             <button class="botao-salvar" type="submit">Salvar</button>
         </section>
     </form>
